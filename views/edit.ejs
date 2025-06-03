@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+  <div class="main w-full min-h-screen bg-zinc-900 p-5 sm:p-10 text-white">
+    <div class="Nav mb-6">
+      <a href="/" class="text-blue-500">Back to Home</a>
+    </div>
+
+    <h1 class="text-3xl mb-6 font-semibold">Update User</h1>
+
+    <form action="/update/<%= user?._id %>?_method=PUT" method="POST" class="flex flex-col gap-4 max-w-md">
+      <input
+        type="text"
+        name="name"
+        placeholder="Enter Name"
+        class="px-5 py-2 outline-none border-2 border-zinc-600 text-white bg-zinc-800 rounded-md w-full"
+        value="<%= user?.name %>"
+      />
+      <input
+        type="text"
+        name="email"
+        placeholder="Enter E-mail"
+        class="px-5 py-2 outline-none border-2 border-zinc-600 text-white bg-zinc-800 rounded-md w-full"
+        value="<%= user?.email %>"
+      />
+      <input
+        type="text"
+        name="image"
+        placeholder="Enter Image URL"
+        class="px-5 py-2 outline-none border-2 border-zinc-600 text-white bg-zinc-800 rounded-md w-full"
+        value="<%= user?.image %>"
+      />
+      <input
+        type="submit"
+        value="Update User"
+        class="px-5 py-2 w-32 text-black bg-yellow-500 rounded-lg hover:bg-yellow-400 transition duration-200 "
+      />
+    </form>
+  </div>
+
+  <script src="/javascripts/script.js"></script>
+</body>
+</html>
