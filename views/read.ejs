@@ -23,7 +23,7 @@
                         <h1 class="text-xl mt-2 text-white tracking-tighter  "><%= user?.name %></h1>
                         <h1 class=" mt-1 text-white text-zinc-400 "><%= user?.email %></h1>
                         <div class="flex gap-4 justify-between mt-4">
-                            <a href="/edit/<%= user?._id %>" class=" text-white"> Edit</a>
+                            <a href="/users/<%= user?._id %>" class=" text-white"> Edit</a>
                             <form action="/delete/<%= user._id %>?_method=DELETE" method="POST">
                                 <button type="submit" class="text-red-500">Delete</button>
                             </form>
